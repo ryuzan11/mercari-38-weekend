@@ -85,7 +85,7 @@ Things you may want to cover:
 
 
 
-## SVS_authenticationテーブル
+## SNS_authenticationテーブル
 
 |Column|Type|Option|
 |------|----|------|
