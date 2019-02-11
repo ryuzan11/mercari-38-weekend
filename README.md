@@ -41,11 +41,12 @@ Things you may want to cover:
 
 ### Association
 - has_one :address
-- has_many :user_evalution
-- has_many :credit
-- has_many :SNS_authentication
-- has_many :favorite
-- has_many :comment
+- has_many :user_evalutions
+- has_many :evaluations, througth: user_evaluations
+- has_many :credits
+- has_many :SNS_authentications
+- has_many :favorites
+- has_many :comments
 
 
 
@@ -105,7 +106,8 @@ Things you may want to cover:
 |value|integer||
 
 ### Association
-- has_many :user_evaluation
+- has_many :user_evaluations
+- has_many :users, througth: user_evaluations
 
 
 ## user_evaluationテーブル
@@ -141,9 +143,9 @@ Things you may want to cover:
 |brand_id|references|null: false|
 
 ### Association
-- has_many :image
-- has_many :favorite
-- has_many :comment
+- has_many :images
+- has_many :favorites
+- has_many :comments
 - belongs_to :category
 - belongs_to :brand
 
@@ -178,7 +180,7 @@ Things you may want to cover:
 |item_id|references|foreign_key: true|
 
 ### Association
-- belongs_to :items
+- belongs_to :item
 
 
 
@@ -191,8 +193,8 @@ Things you may want to cover:
 |user_id|references|foreign_key: true|
 
 ### Association
-- belongs_to :items
-- belongs_to :users
+- belongs_to :item
+- belongs_to :user
 
 
 ## commentテーブル
@@ -204,5 +206,5 @@ Things you may want to cover:
 |user_id|references|foreign_key: true|
 
 ### Association
-- belongs_to :items
-- belongs_to :users
+- belongs_to :item
+- belongs_to :user
