@@ -62,6 +62,9 @@
     img{
       margin: 0 8px 0 0;
     }
+    #lang {
+      width: 22px;
+    }
   }
   a{
     display: block;
@@ -88,8 +91,11 @@
 
 .footer-logo{
   display: block;
-  margin: 40px 0 0;
+  margin: 40px auto 0;
   text-align: center;
+  width: 124px;
+  height: 33px;
+
 }
 
 .footer-copyright{
@@ -100,9 +106,9 @@
   }
 }
 
-img{
-  vertical-align: middle;
-}
+// img{
+//   vertical-align: middle;
+// }
 
 a{
   color: #0099e8;
