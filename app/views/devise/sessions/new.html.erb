@@ -1,11 +1,5 @@
   <div class="single-container">
-    <header class="single-header">
-      <h1>
-        <a href="/">
-          <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1516044782">
-        </a>
-      </h1>
-    </header>
+    <%= render partial: "/devise/shared/header" %>
     <main class="single-main">
       <div class="login-panel">
         <div class="login-no-account">
@@ -29,33 +23,14 @@
             <div class="form-group">
               <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "login-input-text input-default" %>
             </div>
-            <div class="rc-anchor"></div>
+            <div class="rc-anchor">
+              <input type="checkbox">私はネコ型ロボットです。
+            </div>
             <%= f.submit "ログイン", class: "login-submit btn-default btn-red" %>
-            <input type="hidden" name="" value="">
             <a href="">パスワードをお忘れの方</a>
           </div>
         <% end %>
       </div>
     </main>
-    <footer class="single-footer">
-      <nav>
-        <ul>
-          <li>
-            <a href="/">プライバシーポリシー</a>
-          </li>
-          <li>
-            <a href="/">メルカリ利用規約</a>
-          </li>
-          <li>
-            <a href="/">特定商取引に関する表記</a>
-          </li>
-        </ul>
-      </nav>
-      <a href="/" class="single-footer-logo">
-        <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2935426046">
-      </a>
-      <p>
-        <small>©︎ 2019 Mercari</small>
-      </p>
-    </footer>
+    <%= render partial: "/devise/shared/footer" %>
   </div>
