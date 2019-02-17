@@ -78,16 +78,21 @@
 }
 
 
-.pc-header__nav {
-  &--root {
-    line-height: 34px;
-    margin: 0 5px 0 0;
-  }
+.pc-header__nav--root {
+  line-height: 34px;
+  margin: 0 5px 0 0;
 }
-.pc-header__nav--root{
+.pc-header__nav--search a {
   color: black;
 }
-.pc-header__nav--root:hover {
+.pc-header__nav--search a:hover {
+  color: #0099e8;
+}
+.pc-header__nav--user a {
+  line-height: 14px;
+  color: black;
+}
+.pc-header__nav--user a:hover {
   color: #0099e8;
 }
 .pc-header__nav h2 {
@@ -148,6 +153,9 @@
 .signup_btn:hover {
   background-color: #0099e8;
   color: #fff;
+}
+.right-m {
+  padding-top: 10px;
 }
 
 
