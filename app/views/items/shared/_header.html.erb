@@ -69,7 +69,7 @@
           </li>
           <li>
             <h2>
-              <%= link_to "新規会員登録",new_user_registration_path, class: "header_btn signup_btn" %>
+              <%= render "新規会員登録", partial: "/devise/shared/signup-page", class: "header_btn signup_btn" %>
             </h2>
           </li>
         </ul>
