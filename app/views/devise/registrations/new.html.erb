@@ -1,50 +1,75 @@
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+<div class="single-container">
+  <header class="single-header">
+  <h1>
+    <a href="/">
+      <img src="https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1516044782">
+    </a>
+  </h1>
+  </header>
+  <main class="single-main">
+    <section class="signup-container">
+      <h2 class="signup-head">会員情報入力</h2>
+    <div class="signup-inner">
+      <div class="signup-content">
+        <!-- 入力フォーム -->
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-
-
-  <div class="single-container">
-    <%= render partial: "/devise/shared/header" %>
-    <main class="single-main">
-      <section class="signup-container">
-        <h2 class="signup-head">新規会員登録</h2>
-      <div class="signup-inner">
-        <div class="signup-content">
-          <div class="btn-default btn-mail">
-            <i class="far fa-envelope"></i>
-            <%= link_to "メールアドレスで登録", new_user_registration_path %>
+          <div class="form-group">
+            <%= f.label :ニックネーム %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例）メルカリ太郎", class: "input-default login-input-text" %>
           </div>
-          <button id="fb-login" class="btn-default btn-sns btn-sns-fb">
-            <i class="fab fa-facebook"></i>facebookで登録
-          </button>
-          <button id="google-login" class="btn-default btn-sns btn-sns-google">
-            <i class="fab fa-google-plus-g"></i>Googleで登録
-          </button>
-        </div>
+
+          <div class="form-group">
+            <%= f.label :メールアドレス %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "PC・携帯どちらでも可", class: "input-default login-input-text" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :パスワード %><br />
+            <%= f.password_field :password, autocomplete: "new-password", placeholder: "６文字以上", class: "login-input-text input-default" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :パスワード %>（確認）<br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "６文字以上", class: "login-input-text input-default" %>
+          </div>
+
+          <h3>本人確認</h3>
+          <p>安心 ・安全にご利用いただく為に情報寄越すにゃー</p>
+
+          <div class="form-group">
+            <%= f.label :姓 %>（全角）<br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例）メルカリ太郎", class: "input-default login-input-text" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :名 %>（全角）<br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例）メルカリ太郎", class: "input-default login-input-text" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :姓カナ%>（全角）<br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例）メルカリ太郎", class: "input-default login-input-text" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :名カナ %>（全角）<br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "例）メルカリ太郎", class: "input-default login-input-text" %>
+          </div>
+
+          <div class="rc-anchor">
+            <input type="checkbox">私はネコ型ロボットです。
+          </div>
+
+          <div class="actions">
+            <%= f.submit "次へ進む", class: "login-submit btn-default btn-red" %>
+          </div>
+        <% end %>
+        <!-- ここまで -->
       </div>
-      </section>
-    </main>
-    <%= render partial: "/devise/shared/footer" %>
-  </div>
+    </div>
+    </section>
+  </main>
+  <%= render partial: "/devise/shared/footer" %>
+</div>
