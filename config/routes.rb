@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root "items#index"
-  resources :items
+  get 'items/show', to: 'items#show'
+  get 'items/detail', to: 'items#detail'
+  resources :items, except: :show
 end
