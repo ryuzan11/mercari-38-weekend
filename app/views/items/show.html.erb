@@ -178,13 +178,13 @@
       <section class="sns-logo">
           <ul class="sns-logo_wrapper clearfix">
             <li class="sns-logo_wrapper__item">
-              <a href="#"><img src="./images/facebook.png" alt="facebook"></a>
+              <a href="#"><%= image_tag("facebook.png") %></a>
             </li>
             <li  class="sns-logo_wrapper__item">
               <a href="#"><img src="./images/twitter.png" alt="twitter"></a>
             </li≈>
             <li class="sns-logo_wrapper__item">
-              <a href="#"><img src="./images/mercari.png" alt="pinterest"></a>
+              <a href="#"><img src="./images/pinterest.png" alt="pinterest"></a>
             </li>
           </ul>
       </section>
@@ -195,7 +195,8 @@
         <div class="item_user_another-items__wrapper clearfix">
           <div class="item_user_another-items__wrapper-item-box" >
             <a href="#">
-              <img class="item_user_another-items__wrapper-item-box__photo" src="./images/user-another1.png">
+              <%= image_tag("user-another1.png", class: "item_user_another-items__wrapper-item-box__photo") %>
+
               <div class="item_user_another-items_item-box__text">
                 <h3 class="item_user_another-items_item-box__text_name">
                   NIKE ズームフライ 25.0
@@ -430,7 +431,8 @@
       </section>
     </div>
 <footer class="item-footer">
-  <img class="footer-img" src="./images/item-footer.png" alt="フリマアプリ無料ダウンロード">
+  <%= image_tag("フリマアプリ.png", class: "footer-img", alt: "フリマアプリ無料ダウンロード") %>
+
 </footer>
 <%= render partial: "footer" %>
 <%= render partial: "footer-sell-btn" %>
