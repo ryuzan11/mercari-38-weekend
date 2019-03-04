@@ -1,0 +1,12 @@
+.container
+  = render partial: "header"
+  .main-contents
+    %section
+      = image_tag("メルカリしようよ.png")
+    %section.pickup-container
+      %h2.pickup-head ピックアップカテゴリー
+      = render partial: "pickup"
+      / 変数を使用するためにlocalsの記入をお願いします
+      %h2.pickup-head ピックアップブランド
+      = render partial: "pickup"
+      / 変数を使用するためにlocalsの記入をお願いします

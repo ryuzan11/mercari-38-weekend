@@ -1,38 +1,38 @@
-  .mypage__side-bar {
-    width: 280px;
-    float: left;
-    margin: 0 40px 0 0;
+.mypage__side-bar {
+  width: 280px;
+  float: left;
+  margin: 0 40px 0 0;
 
-    li:first-child {
-      border: 0;
-    }
-    li {
-      border-top: 1px solid #eee;
-     .active{
-        background-color: #eee;
-        font-weight: 600;
-        .fa-angle-right {
-          color: #333;
-        }
-      }
-      a {
-        position: relative;
-        display: block;
-        padding:14px;
-        background-color: #fff;
-        font-size: 14px;
-        i {
-          position: absolute;
-          top: 35%;
-          right: 16px;
-          color: #ccc;
-          font-size: 1.2em;
-
-        }
+  li:first-child {
+    border: 0;
+  }
+  li {
+    border-top: 1px solid #eee;
+   .active{
+      background-color: #eee;
+      font-weight: 600;
+      .fa-angle-right {
+        color: #333;
       }
     }
-    &__list__head {
-      margin: 40px 0 0;
-      font-size: 16px;
+    a {
+      position: relative;
+      display: block;
+      padding:14px;
+      background-color: #fff;
+      font-size: 14px;
+      i {
+        position: absolute;
+        top: 35%;
+        right: 16px;
+        color: #ccc;
+        font-size: 1.2em;
+
+      }
     }
   }
+  &__list__head {
+    margin: 40px 0 0;
+    font-size: 16px;
+  }
+}
