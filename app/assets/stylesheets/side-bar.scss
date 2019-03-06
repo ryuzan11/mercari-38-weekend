@@ -1,7 +1,13 @@
 .mypage__side-bar {
-  width: 280px;
-  float: left;
-  margin: 0 40px 0 0;
+  margin: 40px auto 0;
+  @media screen and (min-width: 1068px) {
+    width: 280px;
+    float: left;
+    margin: 0 40px 0 0;
+  }
+  @media screen and (min-width: 768px) {
+    width: 700px;
+  }
 
   li:first-child {
     border: 0;
