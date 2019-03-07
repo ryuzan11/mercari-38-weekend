@@ -1,0 +1,49 @@
+.mypage__tab-news-todo
+  %ul.nav-tabs.upper-tab.clearfix
+    %li
+      %a.active{href: "#news__contents"}
+        お知らせ
+        %span.nav-number.hidden-large 3
+    %li
+      %a{href: "#to-do__contents"} やることリスト
+  .tab-content.upper-tab-content
+    %ul#news__contents.mypage-item-list
+      %li
+        %a.mypage-item-link{href: "https://www.mercari.com/jp/mypage/news/"}
+          %figure
+            = image_tag ("mercari_icon.png")
+          .mypage-item-body
+            .mypage-item-text
+              事務局からあなただけに秘密のお得情報を特別にお教えします・・・・・・。
+              ミンナニハナイショダヨ・・・。
+            %time
+              %i.far.fa-clock
+              %span 3日前
+          %i.fas.fa-angle-right
+      %li
+        %a.mypage-item-link{href: "https://www.mercari.com/jp/mypage/news/"}
+          %figure
+            = image_tag ("mercari_icon.png")
+          .mypage-item-body
+            .mypage-item-text
+              花粉症の季節が始まりました。皆さんもご注意ください。
+            %time
+              %i.far.fa-clock
+              %span 5日前
+          %i.fas.fa-angle-right
+      %li
+        %a.mypage-item-link{href: "https://www.mercari.com/jp/mypage/news/"}
+          %figure
+            = image_tag ("mercari_icon.png")
+          .mypage-item-body
+            .mypage-item-text
+              味噌汁にピザ用チーズをいれると、おいしい。
+            %time
+              %i.far.fa-clock
+              %span 7日前
+          %i.fas.fa-angle-right
+      %li.all-list-view
+        %a{href: "https://www.mercari.com/jp/mypage/notification/"} 一覧を見る
+    %ul#to-do__contents.mypage-item-list
+      %li.mypage-item-list__not-found
+        現在、やることリストはありません
