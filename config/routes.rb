@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get 'items/show', to: 'items#show'
   get 'items/detail', to: 'items#detail'
   resources :items, except: :show
+  resources :users, only: [:show]
+
 end
