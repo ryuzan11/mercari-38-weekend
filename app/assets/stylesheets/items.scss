@@ -1,5 +1,6 @@
 body {
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  color: #333;
 }
 a {
   color: #0099e8;
@@ -21,11 +22,12 @@ h3 {
   font-weight: bold;
 }
 
+
 //all
 .container {
-  height: 1000px;
+  height: 100%;
   width: 100%;
-  background-color: white;
+  background-color: #f5f5f5;
 }
 
 // main
