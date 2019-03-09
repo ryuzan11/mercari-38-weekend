@@ -5,10 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :address
   has_many :user_evalutions
-  has_many :evaluations, througth: user_evaluations
   has_many :credits
   has_many :SNS_authentications
   has_many :favorites
   has_many :comments
+
+  # has_many :evaluations, througth: user_evaluations
 
 end
