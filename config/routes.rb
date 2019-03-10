@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get 'creditcards/new', to: 'creditcards#new'
   resources :items, except: :show
   resources :users, only: [:show, :edit]
+  resources :creditcard, only: [:new]
 end
