@@ -1,5 +1,5 @@
 $(function(){
-  /* ロードイベント　 */
+  /* ロードイベント */
   //パネルの幅
   var carouselWidth = parseInt($('#carousel-panel').css('width').replace('px',''));
   // //パネルの左ボーダー
