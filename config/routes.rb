@@ -7,11 +7,5 @@ Rails.application.routes.draw do
   get 'items/detail', to: 'items#detail'
   get 'creditcards/new', to: 'creditcards#new'
   resources :items, except: :show
-<<<<<<< HEAD
-  resources :users, only: [:show]
-  resources :creditcard, only: [:new]
-=======
   resources :users, only: [:show, :edit]
->>>>>>> keishi-masui/master
-
 end
