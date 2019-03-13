@@ -7,12 +7,13 @@ Rails.application.routes.draw do
   resources :signup, only: [:index]
   get 'items/show', to: 'items#show'
   get 'items/detail', to: 'items#detail'
+  get 'creditcards/new', to: 'creditcards#new'
   resources :items, except: :show
 
   # user関連
   get 'users/register', to: 'users#register'
   resources :users, only: [:show, :edit]
 
-
+  resources :creditcard, only: [:new]
 
 end
