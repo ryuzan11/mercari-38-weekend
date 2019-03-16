@@ -6,8 +6,7 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def delete
-
+  def logout
   end
 
   def register
