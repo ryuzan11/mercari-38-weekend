@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "items#index"
   get 'items/confirm_buy', to: 'items#confirm_buy'
+  post 'items/pay',to: 'items#pay'
   get 'items/show', to: 'items#show'
   get 'items/detail', to: 'items#detail'
   resources :items
