@@ -17,25 +17,25 @@
                 <div id="carousel-wrapper">
                   <div id="carousel-inner">
                     <ul class="carousel-column">
-                      <li><img class="photo_main" src="./images/watch.png" alt="watch.png"></li>
+                      <li><%= image_tag("watch.png", class: "photo_main") %></li>
                     </ul>
                     <ul class="carousel-column">
-                      <li><img class="photo_main" src="./images/adidas-detail1.png" alt="adidas-detail1.png"></li>
+                      <li><%= image_tag("adidas-detail1.png", class: "photo_main") %></li>
                     </ul>
                     <ul class="carousel-column">
-                      <li><img class="photo_main" src="./images/adidas-detail2.png" alt="adidas-detail2.png"></li>
+                      <li><%= image_tag("adidas-detail2.png", class: "photo_main") %></li>
                     </ul>
                     <ul class="carousel-column">
-                      <li><img class="photo_main" src="./images/adidas-detail3.png" alt="adidas-detail3"></li>
+                      <li><%= image_tag("adidas-detail3.png", class: "photo_main") %></li>
                     </ul>
                   </div>
                 </div>
                 <div id="carousel-indicator">
                   <ul>
-                    <li><img class="active" src="./images/adidas-detail1.png" alt="商品サブ画像"></li>
-                    <li><img src="./images/adidas-detail2.png" alt="商品サブ画像"></li>
-                    <li><img src="./images/adidas-detail3.png" alt="商品サブ画像"></li>
-                    <li><img src="./images/watch.png" alt="商品サブ画像"></li>
+                    <li><%= image_tag("adidas-detail1.png", class: "active") %></li>
+                    <li><%= image_tag("adidas-detail2.png") %></li>
+                    <li><%= image_tag("adidas-detail3.png") %></li>
+                    <li><%= image_tag("watch.png") %></li>
                   </ul>
                 </div>
               </div>
@@ -175,10 +175,10 @@
               <a href="#"><%= image_tag("facebook.png") %></a>
             </li>
             <li  class="sns-logo_wrapper__item">
-              <a href="#"><img src="./images/twitter.png" alt="twitter"></a>
+              <a href="#"><%= image_tag("twitter.png") %></a>
             </li≈>
             <li class="sns-logo_wrapper__item">
-              <a href="#"><img src="./images/pinterest.png" alt="pinterest"></a>
+              <a href="#"><%= image_tag("pinterest.png") %></a>
             </li>
           </ul>
       </section>
@@ -190,7 +190,6 @@
           <div class="item_user_another-items__wrapper-item-box" >
             <a href="#">
               <%= image_tag("user-another1.png", class: "item_user_another-items__wrapper-item-box__photo") %>
-
               <div class="item_user_another-items_item-box__text">
                 <h3 class="item_user_another-items_item-box__text_name">
                   NIKE ズームフライ 25.0
@@ -213,7 +212,7 @@
               </a>
             </div>
             <div class="item_user_another-items__wrapper-item-box" >
-              <img class="item_user_another-items__wrapper-item-box__photo" src="./images/user-another2.png">
+              <%= image_tag("user-another2.png", class: "item_user_another-items__wrapper-item-box__photo") %>
               <div class="item_user_another-items_item-box__text">
                 <h3 class="item_user_another-items_item-box__text_name">
                   NIKE ズームフライ 25.0
@@ -235,7 +234,7 @@
               </div>
             </div>
             <div class="item_user_another-items__wrapper-item-box" >
-              <img class="item_user_another-items__wrapper-item-box__photo" src="./images/user-another3.png">
+              <%= image_tag("user-another3.png", class: "item_user_another-items__wrapper-item-box__photo") %>
               <div class="item_user_another-items_item-box__text">
                 <h3 class="item_user_another-items_item-box__text_name">
                   NIKE ズームフライ 25.0
@@ -257,7 +256,7 @@
               </div>
             </div>
             <div class="item_user_another-items__wrapper-item-box" >
-              <img class="item_user_another-items__wrapper-item-box__photo" src="./images/watch.png">
+              <%= image_tag("watch.png", class: "item_user_another-items__wrapper-item-box__photo") %>
               <div class="item_user_another-items_item-box__text">
                 <h3 class="item_user_another-items_item-box__text_name">
                   NIKE ズームフライ 25.0
@@ -286,7 +285,7 @@
         </h2>
         <div class="item_user_another-items__wrapper clearfix">
           <div class="item_user_another-items__wrapper-item-box" >
-              <img class="item_user_another-items__wrapper-item-box__photo" src="./images/user-another3.png">
+              <%= image_tag("user-another3.png", class: "item_user_another-items__wrapper-item-box__photo") %>
               <div class="item_user_another-items_item-box__text">
                 <h3 class="item_user_another-items_item-box__text_name">
                   NIKE ズームフライ 25.0
@@ -309,7 +308,7 @@
             </div>
             <div class="item_user_another-items__wrapper clearfix">
           <div class="item_user_another-items__wrapper-item-box" >
-              <img class="item_user_another-items__wrapper-item-box__photo" src="./images/user-another1.png">
+              <%= image_tag("user-another1.png", class: "item_user_another-items__wrapper-item-box__photo") %>
               <div class="item_user_another-items_item-box__text">
                 <h3 class="item_user_another-items_item-box__text_name">
                   NIKE ズームフライ 25.0
@@ -332,7 +331,7 @@
             </div>
             <div class="item_user_another-items__wrapper clearfix">
           <div class="item_user_another-items__wrapper-item-box" >
-              <img class="item_user_another-items__wrapper-item-box__photo" src="./images/user-another2.png">
+              <%= image_tag("user-another2.png", class: "item_user_another-items__wrapper-item-box__photo") %>
               <div class="item_user_another-items_item-box__text">
                 <h3 class="item_user_another-items_item-box__text_name">
                   NIKE ズームフライ 25.0
@@ -355,7 +354,7 @@
             </div>
             <div class="item_user_another-items__wrapper clearfix">
           <div class="item_user_another-items__wrapper-item-box" >
-              <img class="item_user_another-items__wrapper-item-box__photo" src="./images/user-another1.png">
+              <%= image_tag("user-another1.png", class: "item_user_another-items__wrapper-item-box__photo") %>
               <div class="item_user_another-items_item-box__text">
                 <h3 class="item_user_another-items_item-box__text_name">
                   NIKE ズームフライ 25.0
@@ -378,7 +377,7 @@
             </div>
             <div class="item_user_another-items__wrapper clearfix">
           <div class="item_user_another-items__wrapper-item-box" >
-              <img class="item_user_another-items__wrapper-item-box__photo" src="./images/watch.png">
+              <%= image_tag("watch.png", class: "item_user_another-items__wrapper-item-box__photo") %>
               <div class="item_user_another-items_item-box__text">
                 <h3 class="item_user_another-items_item-box__text_name">
                   NIKE ズームフライ 25.0
@@ -401,7 +400,7 @@
             </div>
             <div class="item_user_another-items__wrapper clearfix">
           <div class="item_user_another-items__wrapper-item-box" >
-              <img class="item_user_another-items__wrapper-item-box__photo" src="./images/user-another3.png">
+              <%= image_tag("user-another3.png", class: "item_user_another-items__wrapper-item-box__photo") %>
               <div class="item_user_another-items_item-box__text">
                 <h3 class="item_user_another-items_item-box__text_name">
                   NIKE ズームフライ 25.0
@@ -425,7 +424,7 @@
       </section>
     </div>
 <footer class="item-footer">
-  <%= image_tag("フリマアプリ.png", class: "footer-img", alt: "フリマアプリ無料ダウンロード") %>
+  <%= image_tag("itemshow-footer.png", class: "footer-img", alt: "フリマアプリ無料ダウンロード") %>
 
 </footer>
 <%= render partial: "footer" %>
