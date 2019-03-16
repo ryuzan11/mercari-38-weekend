@@ -25,6 +25,9 @@
               .main-container__itemInfo__inner__form-psyprice-box-price
                 ¥ 10,000
 
+          = form_tag action: :pay, method: :post do
+            :plain
+              <script type="text/javascript" src="http://checkout.pay.jp" class="payjp-button" data-key="pk_test_849c0c2eccce15277eefcd12">購入する</script>
 
           .main-container__itemInfo__inner__form-pay-buybtn
             %a{href: "" }
