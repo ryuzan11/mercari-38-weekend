@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # user関連
   get 'users/register', to: 'users#register'
   get 'users/profile', to: 'users#profile'
+  get 'users/delete', to: 'users#delete'
   resources :users, only: [:show, :edit]
 
   resources :creditcard, only: [:new]
