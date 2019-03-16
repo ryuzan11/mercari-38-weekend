@@ -7,4 +7,10 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def register
+  end
+
+  def profile
+  end
+
 end
