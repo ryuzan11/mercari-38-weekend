@@ -7,6 +7,16 @@ crumb :show_items do |item|
   parent :root
 end
 
+crumb :show_users do |user|
+  link 'ユーザーページ', users_profile_path
+  parent :root
+end
+
+crumb :delete_users do |user|
+  link 'ログアウト', user
+  parent :show_users
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
