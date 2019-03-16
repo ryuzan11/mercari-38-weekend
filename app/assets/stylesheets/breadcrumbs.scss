@@ -1,0 +1,29 @@
+.breadcrumbs {
+  position: relative;
+  border-top: 2px solid #eee;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  height: 40px;
+  width: 100%;
+  padding-left: 10%;
+  display: flex;
+  li{
+    display: block;
+    height: auto;
+    background-color: white;
+    line-height: 40px;
+    a{
+      display: block;
+      height: auto;
+      color: #333;
+    }
+  }
+}
+
+.fa.fa-caret-right{
+  display: block;
+  line-height: 40px;
+  margin: 0 10px 0 10px;
+}
+
