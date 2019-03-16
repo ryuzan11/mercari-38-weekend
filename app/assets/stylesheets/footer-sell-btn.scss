@@ -20,22 +20,6 @@
 .icon-camera:before{
   content: '\e00a';
 }
-@media screen and (min-width: 768px){
-  .footer-sell-btn {
-    bottom: 32px;
-    right: 32px;
-    width: 160px;
-    height: 160px;
-    font-size: 22px;
-    div{
-      margin: 24px 0 0;
-    }
-    .icon-camera {
-      margin: 8px 0 0;
-      font-size: 54px;
-    }
-  }
-}
 
 .icon-camera{
   display: inline-block;

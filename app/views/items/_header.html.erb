@@ -1,4 +1,3 @@
-@@ -1,63 +0,0 @@
 <header class="pc-header">
   <div class="pc-header__inner">
     <div class="pc-header__inner--top">
@@ -22,12 +21,13 @@
           </li>
           <li>
             <h2>
-              <a href="https://www.mercari.com/jp/"class="pc-header__nav--root">ブランドから探す</a>
+              <%= link_to "ブランドから探す", destroy_user_session_path, method: :delete, class: "pc-header__nav--root" %>
             </h2>
           </li>
         </ul>
       </div>
-      <div class="h-right">
+      <% if user_signed_in? %>
+      <div class="h-right right-m">
         <ul class="pc-header__nav--user">
           <li>
             <a href="https://www.mercari.com/jp/"class="pc-header__nav--root pc-header__user--icon">
@@ -59,6 +59,22 @@
           </li>
         </ul>
       </div>
+      <% else %>
+      <div class="h-right">
+        <ul class="header_login">
+          <li>
+            <h2>
+              <%= link_to "ログイン", new_user_session_path, class: "header_btn btn_red" %>
+            </h2>
+          </li>
+          <li>
+            <h2>
+              <%= link_to "新規会員登録", signup_index_path, class: "header_btn signup_btn" %>
+            </h2>
+          </li>
+        </ul>
+      </div>
+      <% end %>
     </div>
   </div>
 </header>
