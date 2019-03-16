@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20190309060402) do
     t.datetime "updated_at", null: false
   end
 
+
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                          null: false
     t.integer  "price",                         null: false
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(version: 20190309060402) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
+
 
   add_foreign_key "items", "brands"
   add_foreign_key "items", "categories"
