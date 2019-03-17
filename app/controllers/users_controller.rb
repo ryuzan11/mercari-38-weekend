@@ -1,7 +1,18 @@
 class UsersController < ApplicationController
 
-def show
+  def show
+  end
 
-end
+  def edit
+  end
+
+  def logout
+  end
+
+  def register
+  end
+
+  def profile
+  end
 
 end

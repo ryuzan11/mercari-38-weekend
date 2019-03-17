@@ -1,0 +1,60 @@
+
+  <div class="mypage clearfix">
+    <section class="mypage__contents " >
+      <div class="mypage__contents__profile-edit">
+        <h2 class="proflie-edit__top">プロフィール</h2>
+        <form class="profile-edit__submit" action="https://www.mercari.com/jp/mypage/profile/" method="POST" >
+          <input type="hidden" name="">
+          <div class="profile-edit__submit__icon">
+            <figure>
+              <%= image_tag "user_no_image_icon.png" %>
+            </figure>
+            <input type="text" value="current_user" name="nick_name" placeholder="例）AYA☆セール実施中" class="profile__input-name">
+          </div>
+          <div class="profile-edit__submit__content">
+            <textarea name="introduction" placeholder="例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪" class="profile-edit__submit__content__textarea"></textarea>
+            <input type="hidden" value="https://www.mercari.com/jp/mypage/profile/" name="after_save_callback">
+            <button type="submit" class="btn_red">変更する</button>
+          </div>
+        </form>
+
+
+    </section>
+
+<!-- サイドバー
+ -->
+  <%= render partial: "shared/mypage-side-bar" %>
+
+
+
+  </div>
+
+  <footer class="item-footer">
+    <%= image_tag("itemshow-footer.png", class: "footer-img", alt: "フリマアプリ無料ダウンロード") %>
+  </footer>
+
+<!-- hamlうまくいかない・・・
+
+.mypage.clearfix
+  %section.mypage__contents
+    .mypage__contents__profile-edit
+      %h2.proflie-edit__top
+        プロフィール
+      %form.profile-edit__submit {action: "https://www.mercari.com/jp/mypage/profile/", method: :POST}
+      .profile-edit__submit__icon
+        %figure
+          = image_tag("user_no_image_icon")
+        %input{name: "nick_name", type: "text", value: "current_user", placeholder: "例）AYA☆セール実施中", class: "profile__input-name"}
+      .profile-edit__submit__content
+        %input{name: "introduction", type: "textarea", placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "profile-edit__submit__content__textarea"}
+        %button.btn_red{type: :submit}
+
+
+          / =form_tag ('', method: :POST) do
+          /   =text_area_tag (:introduction, placeholder: "", class: "")
+          /   =button_tag "変更する", class: "btn_red", type: :submit)
+          / end
+
+  = render 'shared/mypage-side-bar'
+
+ -->

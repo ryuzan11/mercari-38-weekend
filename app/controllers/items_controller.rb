@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
   def index
   end
 
-<<<<<<< HEAD
   def new
   end
 
@@ -21,12 +20,11 @@ class ItemsController < ApplicationController
 
   def destroy
   end
-=======
+
   def show
   end
 
   def detail
   end
 
->>>>>>> keishi-masui/master
 end

@@ -1,15 +1,9 @@
 $(function(){
   /* ロードイベント */
   //パネルの幅
-  var carouselWidth = parseInt($('#carousel-panel').css('width').replace('px',''));
-  // //パネルの左ボーダー
-  var borderLWidth = parseInt($('#carousel-panel').css('border-left-width').replace('px',''));
-  // //パネルの右ボーダー
-  var borderRWidth = parseInt($('#carousel-panel').css('border-right-width').replace('px',''));
-  // //#carousel-panelの全体の幅
-  var totalWidth = carouselWidth + borderLWidth + borderRWidth;
+ var carouselWidth = 300;
   //carousel-innerのmargin-left初期値
-  var defaultMargin = (totalWidth+ borderLWidth) * -1;
+  var defaultMargin = -300;
   //カルーセルで使用する画像
   var carouselImage = [];
   $('.carousel-column').each(function(){
