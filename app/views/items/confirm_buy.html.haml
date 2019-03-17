@@ -1,4 +1,9 @@
 %main.main
+  %header.single_header
+    .single_header__image
+      = link_to root_path, class: "single_header__image__logo" do
+        = image_tag ("logo.svg"), class: "mercari_logo_horizontal"
+
   .main-container
     %section.main-container__heading
       %h2.main-container__heading-text
@@ -25,15 +30,9 @@
               .main-container__itemInfo__inner__form-psyprice-box-price
                 ¥ 10,000
 
-          = form_tag action: :pay, method: :post do
-            :plain
-              <script type="text/javascript" src="http://checkout.pay.jp" class="payjp-button" data-key="pk_test_849c0c2eccce15277eefcd12">購入する</script>
-
           .main-container__itemInfo__inner__form-pay-buybtn
             %a{href: "" }
               購入する
-
-
     %section.main-container__useraddress
       .main-container__useraddress__box
         %h3.main-container__useraddress__box-header
@@ -45,8 +44,6 @@
           山田 太郎
         %a.main-container__useraddress__box-changeadd{href: ""}
           変更する
-
-
     %section.main-container__cardInfo
       .main-container__cardInfo__box
         %h3.main-container__cardInfo__box-header
@@ -60,8 +57,23 @@
           変更する
 
 
-
-
+  %footer.single_footer
+    %nav
+      %ul.clearfix
+        %li
+          %a{href: ""}
+            プライバシーポリシー
+        %li
+          %a{href: ""}
+            メルカリ利用規約
+        %li
+          %a{href: ""}
+            特定商取引法に関する表記
+    = link_to root_path, class: "single_footer__image" do
+      = image_tag ("logo-gray.svg"), class: "single_footer__image__logo"
+    %p
+      %small
+        ©︎ 2019 mercari
 
 
 

@@ -68,8 +68,12 @@ gem 'erb2haml'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+
+gem 'gretel'
+
 gem 'devise'
 gem 'payjp'
+
 
 group :production do
   gem 'unicorn'
