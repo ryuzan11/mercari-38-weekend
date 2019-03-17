@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   resources :creditcard, only: [:new]
 
+  resources :signup_info
 end
