@@ -5,28 +5,13 @@ class ItemsController < ApplicationController
     binding.pry
   end
 
-  def new
-  end
-
-  def edit
-  end
-
-  def create
-  end
-
-  def show
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
   def show
   end
 
   def detail
+  end
+
+  def confirm_buy
   end
 
 end
