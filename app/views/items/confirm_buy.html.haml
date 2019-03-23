@@ -1,0 +1,83 @@
+%main.main
+  %header.single_header
+    .single_header__image
+      = link_to root_path, class: "single_header__image__logo" do
+        = image_tag ("logo.svg"), class: "mercari_logo_horizontal"
+
+  .main-container
+    %section.main-container__heading
+      %h2.main-container__heading-text
+        購入を確定しますか？
+    %section.main-container__itemInfo
+      .main-container__itemInfo__inner
+        %h3.main-container__itemInfo__inner_imagebox
+          = image_tag ("adidas-detail1.png"), class: "main-container__itemInfo__inner_imagebox-img"
+        %p.main-container__itemInfo__inner__itemname
+          nao様専用 アディゼロサブ2 24.5センチ
+        %form.main-container__itemInfo__inner__form
+          %p.main-container__itemInfo__inner__form-price
+            ¥10,000
+            %span.main-container__itemInfo__inner__form-price-deriver
+              送料込み
+          %ul.main-container__itemInfo__inner__form-pointlist
+            %li.container__itemInfo__inner__form-main-conpointlist-all
+              .main-container__itemInfo__inner__form-pointlist-boxtext
+                ポイントを使う
+          %ul.main-container__itemInfo__inner__form-psyprice
+            %li.main-container__itemInfo__inner__form-psyprice-box.clearfix
+              .main-container__itemInfo__inner__form-psyprice-box-text
+                支払い金額
+              .main-container__itemInfo__inner__form-psyprice-box-price
+                ¥ 10,000
+          .main-container__itemInfo__inner__form-pay-buybtn
+            %a{href: "" }
+              購入する
+    %section.main-container__useraddress
+      .main-container__useraddress__box
+        %h3.main-container__useraddress__box-header
+          配送先
+        %address.main-container__useraddress__box-address
+          〒123-1122
+          %br
+          東京都江戸川区東江戸川3-22-11<br>
+          山田 太郎
+        %a.main-container__useraddress__box-changeadd{href: ""}
+          変更する
+    %section.main-container__cardInfo
+      .main-container__cardInfo__box
+        %h3.main-container__cardInfo__box-header
+          支払い方法
+        %p.main-container__cardInfo__box-cardNo
+          ************7890
+          %br
+          12/31
+        = image_tag ("card-logo.png"), class: "main-container__cardInfo__box-cardimg"
+        %a.main-container__cardInfo__box-changeNo{href: ""}
+          変更する
+
+
+  %footer.single_footer
+    %nav
+      %ul.clearfix
+        %li
+          %a{href: ""}
+            プライバシーポリシー
+        %li
+          %a{href: ""}
+            メルカリ利用規約
+        %li
+          %a{href: ""}
+            特定商取引法に関する表記
+    = link_to root_path, class: "single_footer__image" do
+      = image_tag ("logo-gray.svg"), class: "single_footer__image__logo"
+    %p
+      %small
+        ©︎ 2019 mercari
+
+
+
+
+
+
+
+

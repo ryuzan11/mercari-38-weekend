@@ -3,10 +3,16 @@ Rails.application.routes.draw do
 
   # item関連
   root "items#index"
-  resources :items
-  resources :signup, only: [:index]
+
+  get 'items/confirm_buy', to: 'items#confirm_buy'
   get 'items/show', to: 'items#show'
   get 'items/detail', to: 'items#detail'
+  resources :items
+  resources :signup, only: [:index]
+
+  resources :items, except: :show
+  
+  
   get 'creditcards/new', to: 'creditcards#new'
   resources :items, except: :show
 
@@ -18,4 +24,5 @@ Rails.application.routes.draw do
 
   resources :creditcard, only: [:new]
 
+  resources :signup_info
 end
