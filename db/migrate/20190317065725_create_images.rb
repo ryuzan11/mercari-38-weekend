@@ -8,3 +8,5 @@ class CreateImages < ActiveRecord::Migration[5.0]
     end
   end
 end
+
+# 再プルリク用ファイル
