@@ -10,7 +10,6 @@ class User < ApplicationRecord
   # has_many :credits
   # has_many :SNS_authentications
   # has_many :favorites
-
   has_many :comments
 
   # has_many :evaluations, througth: user_evaluations
