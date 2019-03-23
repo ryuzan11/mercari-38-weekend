@@ -1,0 +1,264 @@
+@charset "UTF-8";
+
+a {
+  text-decoration: none;
+}
+main {
+  width: 100%;
+  background-color: #f5f5f5;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+// ヘッダー部分
+
+.single_header {
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    height: 128px;
+  }
+  &__image {
+    display: inline-block;
+    margin: 11px 0 12px;
+    @media screen and (min-width: 768px) {
+      margin: 40px 0 0;
+    }
+    &__logo {
+      display: inline-block;
+      width: 120px;
+      height: 33px;
+      margin: 0 8px 0 0;
+      line-height: 33px;
+      @media screen and (min-width: 768px) {
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+      }
+      .mercari_logo_horizontal {
+        width: 120px;
+        height: 33px;
+        vertical-align: middle;
+        @media screen and (min-width: 768px) {
+          width: 185px;
+          height: 49px;
+        }
+      }
+    }
+  }
+}
+
+
+.main-container {
+  background-color: white;
+  @media screen and (min-width: 768px) {
+    width: 700px;
+    margin: 0 auto;
+  }
+}
+.main-container__heading {
+  text-align: center;
+  line-height: 1.5;
+  padding: 24px 8px;
+  font-size: 18px;
+  @media screen and (min-width: 768px) {
+    font-size: 22px;
+    padding: 32px 16px;
+  }
+
+}
+.main-container__heading-text {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.main-container__itemInfo {
+  width: 100%;
+  border-top: 1px solid #f5f5f5;
+  padding-bottom: 40px;
+}
+.main-container__itemInfo__inner {
+  width: 320px;
+  margin: 20px auto;
+}
+.main-container__itemInfo__inner_imagebox-img {
+  display: block;
+  width: 148px;
+  height: 148px;
+  margin: 0 auto;
+}
+.main-container__itemInfo__inner__itemname {
+  margin: 8px 0 0px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.main-container__itemInfo__inner__form {
+  padding: 0;
+  margin: 0;
+}
+.main-container__itemInfo__inner__form-price {
+  margin: 8px 0;
+  font-size: 28px;
+  line-height: 1.5;
+  text-align: center;
+  font-weight: 600;
+}
+.main-container__itemInfo__inner__form-price-deriver {
+  margin: 0 0 0 8px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.main-container__itemInfo__inner__form-pointlist {
+  list-style-type: none;
+/*  margin: 0;*/
+  padding: 0;
+}
+.main-container__itemInfo__inner__form-pointlist-boxtext {
+  padding: 16px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.main-container__itemInfo__inner__form-psyprice {
+ /* display: block;*/
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+/*  width: 320px;*/
+}
+.main-container__itemInfo__inner__form-psyprice-box {
+  display: block;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+.main-container__itemInfo__inner__form-psyprice-box-text {
+  display: inline-block;
+
+  float: left;
+  padding: 16px 0;
+}
+.main-container__itemInfo__inner__form-psyprice-box-price {
+  display: inline-block;
+  float: right;
+  padding: 16px 0;
+}
+.main-container__itemInfo__inner__form-pay-buybtn {
+  width: 286px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  text-align: center;
+  margin: 20px auto 0;
+  font-weight: bold;
+  background-color: red;
+}
+.main-container__itemInfo__inner__form-pay-buybtn a {
+  color: white;
+}
+
+// 配送先の情報
+
+.main-container__useraddress {
+  box-sizing: border-box;
+  border-top: 1px solid #f5f5f5;
+  margin: 40px 0 0;
+  padding: 24px 12.5% 0;
+}
+.main-container__useraddress__box {
+  max-width: 320px;
+  margin: 0 auto;
+}
+.main-container__useraddress__box-header {
+  font-size: 14px;
+}
+.main-container__useraddress__box-address {
+  font-size: 14px;
+  font-family: sans-serif;
+  font-style: normal;
+}
+.main-container__useraddress__box-changeadd {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+}
+
+// カード情報
+
+.main-container__cardInfo {
+  box-sizing: border-box;
+  border-top: 1px solid #f5f5f5;
+  margin: 40px 0 0;
+  padding: 24px 12.5%;
+}
+.main-container__cardInfo__box {
+  max-width: 320px;
+  margin: 0 auto;
+}
+.main-container__cardInfo__box-header {
+  font-size: 14px;
+}
+.main-container__cardInfo__box-cardNo {
+  font-size: 14px;
+  margin: 0;
+}
+.main-container__cardInfo__box-cardimg {
+  width:34px;
+  height:20px;
+  background-color:blue;
+}
+.main-container__cardInfo__box-changeNo {
+  display: block;
+  text-align: right;
+  font-size: 14px;
+}
+
+// フッター部分
+
+.single_footer {
+  height: 250px;
+  padding: 40px 0;
+  text-align: center;
+  @media screen and (min-width: 768px) {
+    height: 220px;
+    width: 456px;
+    margin: 0 auto;
+  }
+  li {
+    margin: 16px 0 0;
+    height: 12px;
+    @media screen and (min-width: 768px) {
+      margin: 0 0 0 16px;
+      display: inline-block;
+    }
+    a {
+      color: black;
+      font-size: 12px;
+    }
+  }
+  li:first-child {
+    margin: 0;
+  }
+
+  .single_footer__image {
+    display: block;
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+    &__logo {
+      width: 80px;
+      height: 65px;
+      vertical-align: middle;
+    }
+  }
+  p {
+    margin: 8px 0 0;
+    small {
+      font-size: 12px;
+    }
+  }
+}
+
+
+
