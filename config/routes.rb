@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   # item関連
   root "items#index"
+
   get 'items/confirm_buy', to: 'items#confirm_buy'
   get 'items/show', to: 'items#show'
   get 'items/detail', to: 'items#detail'
@@ -23,4 +24,5 @@ Rails.application.routes.draw do
 
   resources :creditcard, only: [:new]
 
+  resources :signup_info
 end
