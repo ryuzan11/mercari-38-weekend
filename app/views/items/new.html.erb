@@ -44,11 +44,16 @@
             <div class="select-wrap">
               <%= f.select :size, [["XXS（以下）","XXS（以下）"],["XS（SS）","XS（SS）)"],["S","S"],["M","M"],["L","L"],["XL（LL）","XL（LL）"]] ,{prompt: "--"}, class: "select-default" %>
             </div>
+
+<!--             ブランドは未完成
+
             <%= f.label :ブランド, class: "main-section__inner__form-container-label" %>
             <span class="fmain-section__inner__form-container-span_gray">任意</span>
             <div class="select-wrap">
               <%= f.text_field :brand_id, placeholder: "例）シャネル", class: "input-default brand big-box" %>
             </div>
+
+ -->
             <%= f.label :商品の状態, class: "main-section__inner__form-container-label" %>
             <span class="fmain-section__inner__form-container-span">必須</span>
             <div class="select-wrap">
