@@ -55,6 +55,16 @@ body {
   vertical-align: top;
   margin-bottom: 10px;
 }
+.fmain-section__inner__form-container-span_gray {
+  display: inline-block;
+  background-color: #ccc;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+  margin-bottom: 10px;
+}
 .filelabel {
   display: block;
   width: 100%;
@@ -160,6 +170,9 @@ body {
   line-height: 1.5;
   font-size: 16px;
   float: right;
+}
+.brand {
+  margin: 0 0 40px;
 }
 .img-box {
   height: 150px;
