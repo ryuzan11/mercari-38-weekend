@@ -12,11 +12,11 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create(item_params)
 
-    if @item.save
-      @item.images.create(item_id: @item.id)
-    else
+    # if @item.save
+    #   @item.images.create(item_id: @item.id)
+    # else
      render action: :new
-    end
+    # end
 
 
   end
