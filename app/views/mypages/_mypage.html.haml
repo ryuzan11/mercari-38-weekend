@@ -1,0 +1,27 @@
+.mypage.clearfix
+  %section.mypage__contents.clearfix
+    .mypage__contents__user
+      .user-icon
+        %a{href: "https://www.mercari.com/jp/u/580900419/"}
+          %figure
+            = image_tag ("user_no_image_icon.png"), id: "user-icon-img"
+          %h2 user_name
+          .user-info
+            %div
+              評価
+              %span 0
+            %div
+              出品数
+              %span 0
+      /
+        おしらせ＆やることタブ
+      = render '/mypages/news-tab'
+      /
+        購入商品の取引のタブ
+      = render '/mypages/shopping-tab'
+    /
+      サイドバー
+  = render 'shared/mypage-side-bar'
+
+%footer.item-footer
+  = image_tag ("itemshow-footer.png"), class: "footer-img", alt: "フリマアプリ無料ダウンロード"

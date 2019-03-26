@@ -78,16 +78,25 @@
 }
 
 
-.pc-header__nav {
-  &--root {
-    line-height: 20px;
-    margin: 0 5px 0 0;
-  }
+.pc-header__nav h2 {
+  margin-bottom: 0;
 }
-.pc-header__nav a {
+
+.pc-header__nav--root {
+  line-height: 34px;
+  margin: 0 5px 0 0;
+}
+.pc-header__nav--search a {
   color: black;
 }
-.pc-header__nav a:hover {
+.pc-header__nav--search a:hover {
+  color: #0099e8;
+}
+.pc-header__nav--user a {
+  line-height: 14px;
+  color: black;
+}
+.pc-header__nav--user a:hover {
   color: #0099e8;
 }
 .pc-header__nav h2 {
@@ -95,6 +104,7 @@
   font-weight: 400;
   line-height: 1.4;
 }
+
 
 .pc-header__user--icon img{
   height: 32px;
@@ -118,3 +128,51 @@
   border-radius: 50%;
 }
 
+
+//before login
+
+
+.btn_red {
+  display: block;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+.header_btn {
+  margin: 0;
+  padding: 0 10px;
+  line-height: 30px;
+  border-radius: 4px;
+  text-align: center;
+}
+.header_login li {
+  margin: 0 0 0 8px;
+}
+.signup_btn {
+  display: block;
+  border: 1px solid #0099e8;
+  background: #fff;
+  color: #0099e8;
+}
+.signup_btn:hover {
+  background-color: #0099e8;
+  color: #fff;
+}
+.right-m {
+  padding-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//after login
