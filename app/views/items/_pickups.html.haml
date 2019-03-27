@@ -1,8 +1,8 @@
 - pretial_items.each do |item|
   %section.items-box
-    %a{:href => "/items/1"}
+    %a{:href => "/items/#{item.id}"}
       .item-box__photo
-        %img{:src => "https://pbs.twimg.com/profile_images/483620827896631298/TATK3-4w_400x400.jpeg"}/
+        =image_tag("#{item.images.first.image}")
       .items-box__body
         %h3.items-box__name.font2
           = item.name
