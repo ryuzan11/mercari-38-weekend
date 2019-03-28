@@ -11,11 +11,120 @@
     </section>
     <section class="pickup-container">
       <h2 class="pickup-head">ピックアップカテゴリー</h2>
-        <%= render partial: "pickup" %>
-        <!-- 変数を使用するためにlocalsの記入をお願いします -->
+      <section class="items-box-container">
+        <a href="/">
+          <h3 class="text-center">
+            <%= "#{Category.find(1).name}新着アイテム" %>
+          </h3>
+        </a>
+          <div class="items-box-content">
+            <%= render partial: "pickups", locals: { pretial_items: @itemsLadies } %>
+            <!-- 変数を使用するためにlocalsの記入をお願いします -->
+          </div>
+          <div class="view-all">
+            <a href="/">すべての商品を見る</a>
+          </div>
+        </section>
+        <section class="items-box-container">
+          <a href="/">
+            <h3 class="text-center">
+              <%= "#{Category.find(2).name}新着アイテム" %>
+            </h3>
+          </a>
+          <div class="items-box-content">
+            <%= render partial: "pickups", locals: { pretial_items: @itemsMens } %>
+            <!-- 変数を使用するためにlocalsの記入をお願いします -->
+          </div>
+          <div class="view-all">
+            <a href="/">すべての商品を見る</a>
+          </div>
+        </section>
+        <section class="items-box-container">
+          <a href="/">
+            <h3 class="text-center">
+              <%= "#{Category.find(3).name}新着アイテム" %>
+            </h3>
+          </a>
+          <div class="items-box-content">
+            <%= render partial: "pickups", locals: { pretial_items: @itemsKids } %>
+            <!-- 変数を使用するためにlocalsの記入をお願いします -->
+          </div>
+          <div class="view-all">
+            <a href="/">すべての商品を見る</a>
+          </div>
+        </section>
+        <section class="items-box-container">
+          <a href="/">
+            <h3 class="text-center">
+              <%= "#{Category.find(4).name}新着アイテム" %>
+            </h3>
+          </a>
+          <div class="items-box-content">
+            <%= render partial: "pickups", locals: { pretial_items: @itemsCosme } %>
+            <!-- 変数を使用するためにlocalsの記入をお願いします -->
+          </div>
+          <div class="view-all">
+            <a href="/">すべての商品を見る</a>
+          </div>
+        </section>
       <h2 class="pickup-head">ピックアップブランド</h2>
-        <%= render partial: "pickup" %>
-        <!-- 変数を使用するためにlocalsの記入をお願いします -->
+      <section class="items-box-container">
+        <a href="/">
+          <h3 class="text-center">
+            <%= "#{Brand.find(1).name}新着アイテム" %>
+          </h3>
+        </a>
+          <div class="items-box-content">
+            <%= render partial: "pickups", locals: { pretial_items: @itemsAdidas } %>
+            <!-- 変数を使用するためにlocalsの記入をお願いします -->
+          </div>
+          <div class="view-all">
+            <a href="/">すべての商品を見る</a>
+          </div>
+        </section>
+        <section class="items-box-container">
+          <a href="/">
+            <h3 class="text-center">
+              <%= "#{Brand.find(3).name}新着アイテム" %>
+            </h3>
+          </a>
+          <div class="items-box-content">
+            <%= render partial: "pickups", locals: { pretial_items: @itemsLacoste } %>
+            <!-- 変数を使用するためにlocalsの記入をお願いします -->
+          </div>
+          <div class="view-all">
+            <a href="/">すべての商品を見る</a>
+          </div>
+        </section>
+        <section class="items-box-container">
+          <a href="/">
+            <h3 class="text-center">
+              <%= "#{Brand.find(2).name}新着アイテム" %>
+            </h3>
+          </a>
+          <div class="items-box-content">
+            <%= render partial: "pickups", locals: { pretial_items: @itemsChanel } %>
+            <!-- 変数を使用するためにlocalsの記入をお願いします -->
+          </div>
+          <div class="view-all">
+            <a href="/">すべての商品を見る</a>
+          </div>
+        </section>
+        <section class="items-box-container">
+          <a href="/">
+            <h3 class="text-center">
+              <%= "#{Brand.find(4).name}新着アイテム" %>
+            </h3>
+          </a>
+          <div class="items-box-content">
+            <%= render partial: "pickups", locals: { pretial_items: @itemsShips } %>
+            <!-- 変数を使用するためにlocalsの記入をお願いします -->
+          </div>
+          <div class="view-all">
+            <a href="/">すべての商品を見る</a>
+          </div>
+        </section>
+      </section>
     </section>
   </div>
 
