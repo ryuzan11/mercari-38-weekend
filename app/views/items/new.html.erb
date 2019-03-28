@@ -1,3 +1,5 @@
+  <%= render partial: "/devise/shared/header" %>
+
 <main class="main">
   <section class="main-section">
     <div class="main-section__inner">
@@ -11,12 +13,9 @@
           <%= f.label :出品画像, class: "main-section__inner__form-container-label" %>
           <span class="fmain-section__inner__form-container-span">必須</span><br>
           <p class="fmain-section__inner__form-container-p">最大4枚までアップロードできます。</p>
-
           <%= f.fields_for :images do |image| %>
             <%= image.file_field :image,id: "image-box", class: "input-img", class: "img-box big-box"  %>
-
           <% end %>
-
         </div>
 
         <div class="main-section__inner__form-container">
@@ -44,16 +43,14 @@
             <div class="select-wrap">
               <%= f.select :size, [["XXS（以下）","XXS（以下）"],["XS（SS）","XS（SS）)"],["S","S"],["M","M"],["L","L"],["XL（LL）","XL（LL）"]] ,{prompt: "--"}, class: "select-default" %>
             </div>
+            <%= f.fields_for :brand_attributes, @item.brand do |brand| %>
+              <%= f.label :ブランド, class: "main-section__inner__form-container-label" %>
+              <span class="fmain-section__inner__form-container-span_gray">任意</span>
+              <div class="select-wrap">
+                <%= brand.text_field :name, placeholder: "例）シャネル", class: "input-default brand big-box" %>
+              </div>
+            <% end %>
 
-<!--             ブランドは未完成
-
-            <%= f.label :ブランド, class: "main-section__inner__form-container-label" %>
-            <span class="fmain-section__inner__form-container-span_gray">任意</span>
-            <div class="select-wrap">
-              <%= f.text_field :brand_id, placeholder: "例）シャネル", class: "input-default brand big-box" %>
-            </div>
-
- -->
             <%= f.label :商品の状態, class: "main-section__inner__form-container-label" %>
             <span class="fmain-section__inner__form-container-span">必須</span>
             <div class="select-wrap">
@@ -91,7 +88,6 @@
             <%= f.select :departure_day, [["1~2日で発送","1~2日で発送"],["2~3日で発送","2~3日で発送"],["4~7日で発送","4~7日で発送"]] ,{prompt: "--"}, class: "select-default" %>
         </div>
       </div>
-
       <div class="main-section__inner__form-container clearfix long-margin">
         <h3 class="main-section__inner__form-container__head">販売価格(300~9,999,999)</h3>
         <div class="main-section__inner__form-container__rightbox">
@@ -119,7 +115,6 @@
           </div>
         </div>
       </div>
-
       <p class="main-section__inner__form-container-text">
           <span class="blue">禁止されている出品、行為</span>を必ずご確認ください。<br>
           またブランド品でシリアルナンバー等がある場合はご記載ください。<span class="blue">偽ブランドの販売</span>は犯罪であり処罰される可能性があります。<br>
@@ -137,4 +132,5 @@
   </section>
 </main>
 
+  <%= render partial: "/devise/shared/footer" %>
 

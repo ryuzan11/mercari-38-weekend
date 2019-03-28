@@ -73,6 +73,8 @@ gem 'gretel'
 
 gem 'devise'
 
+gem 'pry-rails'
+
 
 group :production do
   gem 'unicorn'
