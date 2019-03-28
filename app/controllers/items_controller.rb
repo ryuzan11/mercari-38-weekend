@@ -17,19 +17,22 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
+    # @item.brands.build
     # @categories = Category.all
   end
 
   def create
-    @item = Item.create(item_params)
+    @item = Item.new(item_params)
 
-    # if @item.save
-    #   @item.images.create(item_id: @item.id)
-    # else
-     render action: :new
-    # end
+    if @item.brand
+      @item.brand = Brand.find_or_create_by(name: @item.brand.name)
+    end
 
-
+    if @item.save
+      redirect_to root_path
+    else
+      render action: :new
+    end
   end
 
   def edit
@@ -57,7 +60,8 @@ class ItemsController < ApplicationController
 
   def  item_params
     params.require(:item).permit(:name, :price, :condition, :info, :size, :delivery_fee, :delivery_method, :departure_area, :departure_day, :category_id, :brand_id,
-      images_attributes: [:image, :item_id]
+      images_attributes: [:id, :image, :item_id],
+      brand_attributes: [:id, :name, :brand_id]
       ).merge(user_id: current_user.id,status: 1)
   end
 
