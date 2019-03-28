@@ -2,7 +2,8 @@
   %section.items-box
     %a{:href => "/items/#{item.id}"}
       .item-box__photo
-        =image_tag("#{item.images.first.image}")
+        =image_tag("nothing_to_do.png")
+        / =image_tag("#{item.images.first}")
       .items-box__body
         %h3.items-box__name.font2
           = item.name
