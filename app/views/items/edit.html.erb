@@ -7,7 +7,7 @@
         商品の情報を入力
       </h2>
 
-      <%= form_for @item, url: {action: "update"}, html: {class: "main-section__inner__form"} do |f| %>
+      <%= form_for @item, url: {action: "update"}, html: {class: "main-section__inner__form", method: :put} do |f| %>
 
         <div class="main-section__inner__form-container">
           <%= f.label :出品画像, class: "main-section__inner__form-container-label" %>
