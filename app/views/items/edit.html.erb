@@ -7,7 +7,7 @@
         商品の情報を入力
       </h2>
 
-      <%= form_for @item, url: {action: "create"}, html: {class: "main-section__inner__form"} do |f| %>
+      <%= form_for @item, url: {action: "update"}, html: {class: "main-section__inner__form", method: :put} do |f| %>
 
         <div class="main-section__inner__form-container">
           <%= f.label :出品画像, class: "main-section__inner__form-container-label" %>
@@ -115,13 +115,8 @@
           </div>
         </div>
       </div>
-      <p class="main-section__inner__form-container-text">
-          <span class="blue">禁止されている出品、行為</span>を必ずご確認ください。<br>
-          またブランド品でシリアルナンバー等がある場合はご記載ください。<span class="blue">偽ブランドの販売</span>は犯罪であり処罰される可能性があります。<br>
-          また、出品を持ちまして<span class="blue">加盟店規約</span>に同意したことになります。
-      </p>
 
-      <%= f.submit "出品する" , id: "submit" %>
+      <%= f.submit "変更する" , id: "submit" %>
 
       <p>
       <input type="button" id="return" value="もどる" onclick="history.back()">

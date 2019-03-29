@@ -74,6 +74,8 @@ gem 'gretel'
 gem 'devise'
 gem 'payjp'
 
+gem 'pry-rails'
+
 
 group :production do
   gem 'unicorn'
