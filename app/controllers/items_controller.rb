@@ -36,12 +36,18 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @item = Item.new unless @item
+    # マージする際には削除
+    # @item = Item.find(params[:id])
   end
 
   def show
   end
 
   def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    # redirect_to 商品詳細表示
   end
 
   def destroy
