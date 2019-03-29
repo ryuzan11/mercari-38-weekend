@@ -11,12 +11,12 @@
     %section.main-container__itemInfo
       .main-container__itemInfo__inner
         %h3.main-container__itemInfo__inner_imagebox
-          = image_tag ("adidas-detail1.png"), class: "main-container__itemInfo__inner_imagebox-img"
+          = image_tag ("@item.image"), class: "main-container__itemInfo__inner_imagebox-img"
         %p.main-container__itemInfo__inner__itemname
-          nao様専用 アディゼロサブ2 24.5センチ
+          = @item.name
         %form.main-container__itemInfo__inner__form
           %p.main-container__itemInfo__inner__form-price
-            ¥10,000
+            = "¥#{item.price}"
             %span.main-container__itemInfo__inner__form-price-deriver
               送料込み
           %ul.main-container__itemInfo__inner__form-pointlist
@@ -28,11 +28,10 @@
               .main-container__itemInfo__inner__form-psyprice-box-text
                 支払い金額
               .main-container__itemInfo__inner__form-psyprice-box-price
-                ¥ 10,000
+                = "¥#{item.price}"
 
           = form_tag action: :pay, method: :post do
-            :plain
-              <script type="text/javascript" src="http://checkout.pay.jp" class="payjp-button" data-key="pk_test_849c0c2eccce15277eefcd12">購入する</script>
+            %script {type: "text/javascript", src: "http://checkout.pay.jp", class: "payjp-button", data-key: "pk_test_849c0c2eccce15277eefcd12", data-text: "購入する"}
 
           .main-container__itemInfo__inner__form-pay-buybtn
             %a{href: "" }
