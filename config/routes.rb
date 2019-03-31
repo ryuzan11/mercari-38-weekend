@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # item関連
   root "items#index"
 
-  get 'items/confirm_buy', to: 'items#confirm_buy'
+  get 'items/:id/confirm_buy', to: 'items#confirm_buy'
   post 'items/pay',to: 'items#pay'
   get 'items/detail', to: 'items#detail'
 

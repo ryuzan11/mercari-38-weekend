@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-before_action :set_item, only: [:edit, :update, :destroy]
+before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy]
 
   def index
     items = Item.all
@@ -66,7 +66,6 @@ before_action :set_item, only: [:edit, :update, :destroy]
   end
 
   def confirm_buy
-    @item = Item.find(params[:id])
   end
 
   def pay
