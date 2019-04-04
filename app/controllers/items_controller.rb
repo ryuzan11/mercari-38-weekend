@@ -66,6 +66,7 @@ before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy]
   end
 
   def confirm_buy
+    @image = @item.images.first.image
   end
 
   def pay
