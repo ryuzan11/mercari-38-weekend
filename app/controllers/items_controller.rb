@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy]
+before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy, :pay]
 
   def index
     items = Item.all
@@ -70,13 +70,24 @@ before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy]
   end
 
   def pay
-    Payjp.api_key = 'sk_test_fe7225e65340815dd04c2084
-'
-    Payjp::Charge.create(
-      amount: 10000,
-      card: params['payjp-token'],
-      currency: 'jpy'
-    )
+    ActiveRecord::Base.transaction do
+      if @item.status === "1"
+        require 'payjp'
+        Payjp.api_key = 'sk_test_fe7225e65340815dd04c2084'
+        charge = Payjp::Charge.create(
+          amount: @item.price,
+          card: params['payjp-token'],
+          currency: 'jpy'
+        )
+        @item.update(status: 2, buyer_id: current_user.id)
+      else
+        raise
+      end
+    end
+        redirect_to root_path, notice: '購入手続きが完了しました。'
+
+  rescue => e
+    redirect_to item_path(@item), alert: '購入に失敗しました。'
 
   end
 
