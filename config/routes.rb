@@ -5,10 +5,18 @@ Rails.application.routes.draw do
   root "items#index"
 
   get 'items/:id/confirm_buy', to: 'items#confirm_buy'
-  post 'items/pay',to: 'items#pay'
+  get 'items/top'
   get 'items/detail', to: 'items#detail'
 
-  resources :items
+  resources :items do
+    collection do
+      post 'pay'
+    end
+  end
+
+  post 'items/pay',to: 'items#pay'
+
+
   resources :signup, only: [:index]
 
 
