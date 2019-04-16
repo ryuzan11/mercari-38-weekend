@@ -1,5 +1,5 @@
 crumb :root do
-  link "Home", root_path
+  link "ホーム", root_path
 end
 
 crumb :show_items do |item|
@@ -7,8 +7,18 @@ crumb :show_items do |item|
   parent :root
 end
 
-crumb :show_users do |user|
-  link 'ユーザーページ', users_profile_path
+crumb :register_users do |user|
+  link '本人情報', users_profile_path
+  parent :root
+end
+
+crumb :profile_users do |user|
+  link 'プロフィール', users_profile_path
+  parent :root
+end
+
+crumb :mypage_users do |user|
+  link 'マイページ', users_profile_path
   parent :root
 end
 
