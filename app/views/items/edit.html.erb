@@ -1,0 +1,131 @@
+  <%= render partial: "/devise/shared/header" %>
+
+<main class="main">
+  <section class="main-section">
+    <div class="main-section__inner">
+      <h2 class="main-section__inner__head">
+        商品の情報を入力
+      </h2>
+
+      <%= form_for @item, url: {action: "update"}, html: {class: "main-section__inner__form", method: :put} do |f| %>
+
+        <div class="main-section__inner__form-container">
+          <%= f.label :出品画像, class: "main-section__inner__form-container-label" %>
+          <span class="fmain-section__inner__form-container-span">必須</span><br>
+          <p class="fmain-section__inner__form-container-p">最大4枚までアップロードできます。</p>
+          <%= f.fields_for :images do |image| %>
+            <%= image.file_field :image,id: "image-box", class: "input-img", class: "img-box big-box"  %>
+          <% end %>
+        </div>
+
+        <div class="main-section__inner__form-container">
+          <%= f.label :商品名, class: "main-section__inner__form-container-label" %>
+          <span class="fmain-section__inner__form-container-span">必須</span><br>
+          <%= f.text_field :name, placeholder: "商品名（必須40文字まで）", class: "input-default big-box" %>
+        </div>
+
+        <div class="main-section__inner__form-container long-margin">
+          <%= f.label :商品の説明, class: "main-section__inner__form-container-label" %>
+          <span class="fmain-section__inner__form-container-span">必須</span><br>
+          <%= f.text_area :info, placeholder: "商品の説明（必須1,000文字以内）（色、素材、重さ、定価、注意点など）", class: "fmain-section__inner__form-container-textarea" %>
+        </div>
+
+        <div class="main-section__inner__form-container clearfix long-margin">
+          <h3 class="main-section__inner__form-container__head">商品の詳細</h3>
+          <div class="main-section__inner__form-container__rightbox">
+            <%= f.label :カテゴリー, class: "main-section__inner__form-container-label" %>
+            <span class="fmain-section__inner__form-container-span">必須</span>
+            <div class="select-wrap">
+              <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "--"}, class: "select-default" %>
+            </div>
+            <%= f.label :サイズ, class: "main-section__inner__form-container-label" %>
+            <span class="fmain-section__inner__form-container-span">必須</span>
+            <div class="select-wrap">
+              <%= f.select :size, [["XXS（以下）","XXS（以下）"],["XS（SS）","XS（SS）)"],["S","S"],["M","M"],["L","L"],["XL（LL）","XL（LL）"]] ,{prompt: "--"}, class: "select-default" %>
+            </div>
+            <%= f.fields_for :brand_attributes, @item.brand do |brand| %>
+              <%= f.label :ブランド, class: "main-section__inner__form-container-label" %>
+              <span class="fmain-section__inner__form-container-span_gray">任意</span>
+              <div class="select-wrap">
+                <%= brand.text_field :name, placeholder: "例）シャネル", class: "input-default brand big-box" %>
+              </div>
+            <% end %>
+
+            <%= f.label :商品の状態, class: "main-section__inner__form-container-label" %>
+            <span class="fmain-section__inner__form-container-span">必須</span>
+            <div class="select-wrap">
+              <%= f.select :condition, [["新品、未使用","新品、未使用"],["未使用に近い","未使用に近い)"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"]] ,{prompt: "--"}, class: "select-default" %>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-section__inner__form-container clearfix long-margin">
+          <h3 class="main-section__inner__form-container__head">配送について？</h3>
+          <div class="main-section__inner__form-container__rightbox">
+            <%= f.label :配送料の負担, class: "main-section__inner__form-container-label" %>
+            <span class="fmain-section__inner__form-container-span">必須</span>
+          <div class="select-wrap">
+            <%= f.select :delivery_fee, [["送料込み(出品者負担)","送料込み(出品者負担)"],["着払い(購入者負担)","着払い(購入者負担)"]] ,{prompt: "--"}, class: "select-default" %>
+          </div>
+          <div class="select-wrap">
+            <%= f.label :発送の方法, class: "main-section__inner__form-container-label" %>
+            <span class="fmain-section__inner__form-container-span">必須</span>
+          </div>
+          <div class="select-wrap">
+            <%= f.select :delivery_method, [["未定","未定"],["ゆうパック","ゆうパック"],["レターパック","レターパック"],["らくらくメルカリ便","らくらくメルカリ便"],["普通郵便（定型・定形外）","普通郵便（定型・定形外）"],["クロネコヤマト","クロネコヤマト"],["クリックポスト","クリックポスト"],["ゆうパケット","ゆうパケット"],["ゆうメール","ゆうメール"]] ,{prompt: "--"}, class: "select-default" %>
+          </div>
+          <div class="select-wrap">
+            <%= f.label :発送元の地域, class: "main-section__inner__form-container-label" %>
+            <span class="fmain-section__inner__form-container-span">必須</span>
+          </div>
+          <div class="select-wrap">
+            <%= f.select :departure_area, [["北海道","北海道"],["青森県","青森県"],["岩手県","岩手県"],["宮城県","宮城県"],["秋田県","秋田県"],["山形県","山形県"],["福島県","福島県"],["茨城県","茨城県"],["栃木県","栃木県"],["群馬県","群馬県"],["埼玉県","埼玉県"],["千葉県","千葉県"],["東京都","東京都"],["神奈川県","神奈川県"]] ,{prompt: "--"}, class: "select-default" %>
+          </div>
+          <div class="select-wrap">
+            <%= f.label :発送までの日数, class: "main-section__inner__form-container-label" %>
+            <span class="fmain-section__inner__form-container-span">必須</span>
+          </div>
+            <%= f.select :departure_day, [["1~2日で発送","1~2日で発送"],["2~3日で発送","2~3日で発送"],["4~7日で発送","4~7日で発送"]] ,{prompt: "--"}, class: "select-default" %>
+        </div>
+      </div>
+      <div class="main-section__inner__form-container clearfix long-margin">
+        <h3 class="main-section__inner__form-container__head">販売価格(300~9,999,999)</h3>
+        <div class="main-section__inner__form-container__rightbox">
+          <div class="clearfix">
+            <label class="main-section__inner__form-container-label-price">価格</label>
+            <span class="fmain-section__inner__form-container-span-price">必須</span>
+            <span class="right">¥</span>
+            <%= f.number_field :price,min: 100,max: 999999,placeholder: "例）300", class: "input-default-price" %>
+          </div>
+          <div class="underline clearfix">
+            <div class="main-section__inner__form-container__fee">
+              販売手数料(10%)
+            </div>
+            <div class="main-section__inner__form-container__fee-show">
+              ¥-
+            </div>
+          </div>
+          <div class="underline clearfix">
+            <div class="main-section__inner__form-container__fee">
+              販売利益
+            </div>
+            <div class="main-section__inner__form-container__fee-show">
+              ¥-
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <%= f.submit "変更する" , id: "submit" %>
+
+      <p>
+      <input type="button" id="return" value="もどる" onclick="history.back()">
+      </p>
+
+      <% end %>
+    </div>
+  </section>
+</main>
+
+  <%= render partial: "/devise/shared/footer" %>
+
