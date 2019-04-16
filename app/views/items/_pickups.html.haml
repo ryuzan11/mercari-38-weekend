@@ -1,0 +1,17 @@
+- pretial_items.each do |item|
+  %section.items-box
+    %a{:href => "/items/#{item.id}"}
+      .item-box__photo
+        =image_tag("nothing_to_do.png")
+        / =image_tag("#{item.images.first}")
+      .items-box__body
+        %h3.items-box__name.font2
+          = item.name
+        .items-box__num
+          .items-box__price.font5
+            = "¥#{item.price}"
+          %p.items-box__tax
+            （税込）
+          .items-box__likes.font2
+            %i.far.fa-heart.icon-like-border
+            %span 1
