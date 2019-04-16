@@ -57,15 +57,19 @@ before_action :set_item, only: [:edit, :update, :destroy]
 
 
   def destroy
-  end
-
-  def show
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to "/users/profile"
   end
 
   def detail
   end
 
   def confirm_buy
+  end
+
+  def check
+    @item = Item.find(params[:id])
   end
 
   private
