@@ -3,13 +3,16 @@ Rails.application.routes.draw do
 
   # item関連
   root "items#index"
-  resources :items
+  resources :items do
+    member do
+      get :check
+    end
+  end
   resources :signup, only: [:index]
 
   get 'items/confirm_buy', to: 'items#confirm_buy'
   get 'items/detail', to: 'items#detail'
   get 'creditcards/new', to: 'creditcards#new'
-
 
   # user関連
   get 'users/register', to: 'users#register'
