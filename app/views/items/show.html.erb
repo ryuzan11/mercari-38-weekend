@@ -1,4 +1,6 @@
-<% breadcrumb :show_items, @items %>
+<%= render partial: "/items/header" %>
+<%- breadcrumb :show_items %>
+<%= breadcrumbs pretext: " ", separator: " #{content_tag(:i, '', :class=>'fa fa-caret-right')} ", style: :ul %>
     <div class="items">
       <section class="items_item-detail">
         <h1 class="items_item-detail_item-name">

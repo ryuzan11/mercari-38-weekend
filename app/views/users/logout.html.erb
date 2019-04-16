@@ -1,3 +1,6 @@
+<%= render partial: "/items/header" %>
+<%- breadcrumb :delete_users %>
+<%= breadcrumbs pretext: " ", separator: " #{content_tag(:i, '', :class=>'fa fa-caret-right')} ", style: :ul %>
 <%= render partial: "mypages/logout" %>
 <%= render partial: "items/footer" %>
 <%= render partial: "items/footer-sell-btn" %>

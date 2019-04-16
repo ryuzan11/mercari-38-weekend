@@ -1,4 +1,7 @@
 .container
+  = render partial: "/items/header"
+  - breadcrumb :register_users
+  = breadcrumbs pretext: " ", separator: " #{content_tag(:i, '', :class=>'fa fa-caret-right')} ", style: :ul
   = render partial: "/mypages/registration_user_info"
   = render partial: "/items/footer"
   = render partial: "/items/footer-sell-btn"
