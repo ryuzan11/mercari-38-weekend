@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy, :pay]
+before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy, :pay, :complete_buy]
 
   def index
     items = Item.all
@@ -39,8 +39,6 @@ before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy, :pay]
     @item = Item.new unless @item
   end
 
-  def show
-  end
 
   def update
     if @item.brand
@@ -62,7 +60,8 @@ before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy, :pay]
   def show
   end
 
-  def detail
+  def complete_buy
+    @image = @item.images.first.image
   end
 
   def confirm_buy
@@ -84,7 +83,7 @@ before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy, :pay]
         raise
       end
     end
-        redirect_to root_path, notice: '購入手続きが完了しました。'
+        redirect_to action: :complete_buy, id: @item.id , notice: '購入手続きが完了しました。'
 
   rescue => e
     redirect_to item_path(@item), alert: '購入に失敗しました。'

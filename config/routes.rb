@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root "items#index"
 
   get 'items/:id/confirm_buy', to: 'items#confirm_buy'
-  get 'items/top'
+  get 'items/:id/complete_buy', to: 'items#complete_buy'
   get 'items/detail', to: 'items#detail'
 
   resources :items do
