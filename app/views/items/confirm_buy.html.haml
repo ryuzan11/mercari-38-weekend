@@ -30,15 +30,9 @@
               .main-container__itemInfo__inner__form-psyprice-box-price
                 = "¥#{@item.price}"
 
-          .payjp-form
-            = form_tag(action: :pay, method: :post, id: @item.id) do
-              %script{type: "text/javascript", src: "http://checkout.pay.jp", class: "payjp-button", "data-key" => "pk_test_849c0c2eccce15277eefcd12", "data-text" => "購入する"}
-
-            / .main-container__itemInfo__inner__form-pay-buybtn
-            /   %a{href: "" }
-            /     購入する
-
-            / %input{type: "submit" }
+        .payjp-form
+          = form_tag(action: :pay, method: :post, id: @item.id) do
+            %script{type: "text/javascript", src: "http://checkout.pay.jp", class: "payjp-button", "data-key" => "pk_test_849c0c2eccce15277eefcd12", "data-text" => "購入する"}
 
     %section.main-container__useraddress
       .main-container__useraddress__box
