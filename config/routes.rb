@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     collection do
       post 'pay'
     end
+    
+    member do
+      get :check
+    end
+    
   end
 
   post 'items/pay',to: 'items#pay'
@@ -22,7 +27,6 @@ Rails.application.routes.draw do
 
 
   get 'creditcards/new', to: 'creditcards#new'
-
 
   # user関連
   get 'users/register', to: 'users#register'
