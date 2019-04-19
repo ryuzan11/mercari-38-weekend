@@ -16,6 +16,7 @@ main {
 // ヘッダー部分
 
 .single_header {
+  clear: both;
   text-align: center;
   @media screen and (min-width: 768px) {
     height: 128px;
@@ -50,6 +51,7 @@ main {
   }
 }
 
+// メイン部分
 
 .main-container {
   background-color: white;
@@ -145,18 +147,18 @@ main {
   float: right;
   padding: 16px 0;
 }
-.main-container__itemInfo__inner__form-pay-buybtn {
-  width: 286px;
-  padding: 16px;
-  border: 1px solid #ccc;
-  text-align: center;
-  margin: 20px auto 0;
-  font-weight: bold;
-  background-color: red;
+
+.payjp-form {
+  padding-top: 50px;
 }
-.main-container__itemInfo__inner__form-pay-buybtn a {
-  color: white;
-}
+
+  #payjp_checkout_box {
+    width: 90px;
+    margin: 0 auto;
+
+  }
+
+
 
 // 配送先の情報
 

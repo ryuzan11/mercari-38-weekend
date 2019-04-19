@@ -72,6 +72,7 @@ gem 'fog-aws'
 gem 'gretel'
 
 gem 'devise'
+gem 'payjp'
 
 gem 'pry-rails'
 

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-before_action :set_item, only: [:edit, :update, :destroy]
+before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy, :pay, :complete_buy]
 
   def index
     items = Item.all
@@ -39,12 +39,15 @@ before_action :set_item, only: [:edit, :update, :destroy]
     @item = Item.new unless @item
   end
 
+<<<<<<< HEAD
   def show
     @item = Item.find(params[:id])
     @images = Image.includes(:item)
     @ownerItems = Item.where( "user_id = ?", @item.user_id ).limit(6)
     @brandItems = Item.where( "brand_id = ?", @item.brand_id ).limit(6)
   end
+=======
+>>>>>>> origin/create-breadcrumbs-function
 
   def update
     if @item.brand
@@ -63,11 +66,44 @@ before_action :set_item, only: [:edit, :update, :destroy]
   def destroy
   end
 
+<<<<<<< HEAD
   def detail
+=======
+  def show
+  end
+
+  def complete_buy
+    @image = @item.images.first.image
+>>>>>>> origin/create-breadcrumbs-function
   end
 
   def confirm_buy
+    @image = @item.images.first.image
   end
+
+  def pay
+    ActiveRecord::Base.transaction do
+      if @item.status === "1"
+        require 'payjp'
+        Payjp.api_key = 'sk_test_fe7225e65340815dd04c2084'
+        charge = Payjp::Charge.create(
+          amount: @item.price,
+          card: params['payjp-token'],
+          currency: 'jpy'
+        )
+        @item.update(status: 2, buyer_id: current_user.id)
+      else
+        raise
+      end
+    end
+        redirect_to action: :complete_buy, id: @item.id , notice: '購入手続きが完了しました。'
+
+  rescue => e
+    redirect_to item_path(@item), alert: '購入に失敗しました。'
+
+  end
+
+
 
   private
 
