@@ -1,0 +1,46 @@
+%main.main
+  %header.single_header
+    .single_header__image
+      = link_to root_path, class: "single_header__image__logo" do
+        = image_tag ("logo.svg"), class: "mercari_logo_horizontal"
+
+  .main-container
+    %section.main-container__heading
+      %h2.main-container__heading-text
+        購入が完了しました。
+    %section.main-container__itemInfo
+      .main-container__itemInfo__inner
+        %h3.main-container__itemInfo__inner_imagebox
+          = image_tag @image , class: "main-container__itemInfo__inner_imagebox-img"
+        %p.main-container__itemInfo__inner__itemname
+          = @item.name
+        %form.main-container__itemInfo__inner__form
+          %p.main-container__itemInfo__inner__form-price
+            = "¥#{@item.price}"
+            %span.main-container__itemInfo__inner__form-price-deriver
+              送料込み
+
+        .main-container__itemInfo__inner__back-to_top_btn
+          = link_to 'トップへもどる', root_path
+
+
+  %footer.single_footer
+    %nav
+      %ul.clearfix
+        %li
+          %a{href: ""}
+            プライバシーポリシー
+        %li
+          %a{href: ""}
+            メルカリ利用規約
+        %li
+          %a{href: ""}
+            特定商取引法に関する表記
+    = link_to root_path, class: "single_footer__image" do
+      = image_tag ("logo-gray.svg"), class: "single_footer__image__logo"
+    %p
+      %small
+        ©︎ 2019 mercari
+
+
+
