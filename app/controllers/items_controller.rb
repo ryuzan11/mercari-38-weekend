@@ -91,8 +91,13 @@ before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy, :pay, :co
 
   rescue => e
     redirect_to item_path(@item), alert: '購入に失敗しました。'
-
   end
+
+
+
+
+
+
 
   private
 
@@ -102,14 +107,14 @@ before_action :set_item, only: [:edit, :update, :destroy,:confirm_buy, :pay, :co
 
   def  item_params
     params.require(:item).permit(:name, :price, :condition, :info, :size, :delivery_fee, :delivery_method, :departure_area, :departure_day, :category_id, :brand_id,
-      images_attributes: [:id, :image, :item_id],
+      images_attributes: [:id, :image, :item_id,:_destroy],
       brand_attributes: [:id, :name, :brand_id]
       ).merge(user_id: current_user.id,status: 1)
   end
 
   def  item_update_params
     params.require(:item).permit(:name, :price, :condition, :info, :size, :delivery_fee, :delivery_method, :departure_area, :departure_day, :category_id, :brand_id,
-      images_attributes: [:id, :image, :item_id]
+      images_attributes: [:id, :image, :item_id,:_destroy]
       ).merge(user_id: current_user.id,status: 1)
   end
 
