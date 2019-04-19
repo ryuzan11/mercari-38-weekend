@@ -1,0 +1,173 @@
+<!-- headerとパンくずリストを記入 -->
+  <div class="items">
+
+    <section class="items_item-detail">
+      <h1 class="items_item-detail_item-name">
+        <%= @item.name %>
+      </h1>
+      <div class="items_item-detail_item-container clearfix">
+        <div class="items_item-detail_item-container_photo-box">
+          <div id="carousel-prev">
+          </div>
+          <div id="carousel-next">
+          </div>
+          <div id="carousel-panel">
+            <div id="carousel-wrapper">
+              <div id="carousel-inner">
+                <ul class="carousel-column">
+                  <li><%=image_tag("watch.png", class: "photo_main") %></li>
+                </ul>
+                <ul class="carousel-column">
+                  <li><%=image_tag("adidas-detail1.png", class: "photo_main") %></li>
+                </ul>
+                <ul class="carousel-column">
+                  <li><%= image_tag("adidas-detail2.png", class: "photo_main") %></li>
+                </ul>
+                <ul class="carousel-column">
+                  <li><%= image_tag("adidas-detail3.png", class: "photo_main") %></li>
+                </ul>
+              </div>
+            </div>
+            <div id="carousel-indicator">
+              <ul>
+                <li><%= image_tag("adidas-detail1.png", class: "active") %></li>
+                <li><%= image_tag("adidas-detail2.png") %></li>
+                <li><%= image_tag("adidas-detail3.png") %></li>
+                <li><%= image_tag("watch.png") %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="items_item-detail_item-container_item-table">
+          <table>
+            <tr>
+              <th class="seller">出品者</th>
+              <td>
+                <a href="#"><%= @item.user.nickname %></a>
+                <div class="clearfix">
+                  <div class="item-user-ratings">
+                    <i class="icon-good">笑</i>
+                    <span>85</span>
+                  </div>
+                  <div class="item-user-ratings">
+                    <i class="icon-nomal">並</i>
+                    <span>0</span>
+                  </div>
+                  <div class="item-user-ratings">
+                    <i class="icon-bad">不</i>
+                    <span>0</span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="categoly">カテゴリー</th>
+              <td><a href="#"><%= @item.category.name %><br>> その他のスポーツ<br>> 陸上競技</a></td>
+            </tr>
+            <tr>
+              <th>ブランド</th>
+              <td><a href="#"><div><%= @item.brand.name %></div></a></td>
+            </tr>
+            <tr>
+              <th>商品の状態</th>
+              <td><%= @item.condition %></td>
+            </tr>
+            <tr>
+              <th>配送料の負担</th>
+              <td>送料込み(出品者負担)</td>
+            </tr>
+            <tr>
+              <th>配送の方法</th>
+              <td><%= @item.delivery_method %></td>
+            </tr>
+            <tr>
+              <th>配送元地域</th>
+              <td><a href="#"><%= @item.departure_area %></a></td>
+            </tr>
+            <tr>
+              <th>配送日の目安</th>
+              <td><%= @item.departure_day %></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="items_item-detail_pricebox">
+        <div class="items_item-detail_pricebox-container">
+          <span class="items_item-detail_pricebox_price">
+            ¥<%= @item.price %>
+          </span>
+          <span class="items_item-detail_pricebox_tax">
+            (税込)
+          </span>
+          <span class="items_item-detail_pricebox_delivary">
+            送料込み
+          </span>
+        </div>
+      </div>
+      <div class="items_item-detail_main-text">
+        <p>サイズが合わなくて、なくなく出品しました。<br>
+           私は、3キロ試し履きしただけです。
+        </p>
+      </div>
+    </section>
+
+    <section class="item-info-condition">
+      <div class="item-info-condition__formset">
+          <button class="item-info-condition__formset__form-btn red">
+            <%= link_to '商品を編集する', "/items/#{@item.id}/edit", method: :get %>
+          </button>
+          <p class="text-center">or</p>
+          <button data-modal="delete-item" data-open="modal" class="item-info-condition__formset__form-btn" >
+            この商品を削除する
+          </button>
+      </div>
+    </section>
+
+    <section class="item-comment">
+      <div class="item-comment__wrapper">
+        <ul class="item-comment__wrapper__comments">
+          <li class="item-comment__wrapper__comments__comment clearfix">
+            <a class="item-comment__wrapper__comments__comment__img" hrer="#">
+              <div class="item-comment__wrapper__comments__comment__img-box">
+                <img class="item-comment__wrapper__comments__comment__img-box__img">画
+              </div>
+              <figcaption  class="item-comment__wrapper__comments__comment__img-caption">
+                バスケットマン
+              </figcaption>
+            </a>
+            <div class="item-comment__wrapper__comments__comment__continer">
+              <div class="item-comment__wrapper__comments__comment__continer-text">
+                ここにコメントが入ります！<br>
+                お願いします！もう後1000円安くしてください！
+              </div>
+              <div class="item-comment__wrapper__comments__comment__continer-time">
+                🕛17時間前
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="item-comment__formset">
+        <form class="item-comment__formset__form">
+          <p class="item-comment__formset__form-caution">
+            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          </p>
+          <textarea class="item-comment__formset__form-textarea" name="">
+          </textarea>
+          <button class="item-comment__formset__form-btn" type="submit">
+            <span class="item-comment__formset__form-btn-text">コメントする</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+<%= render "confirmation_modal", item: @item %>
+
+<footer class="item-footer">
+  <%= image_tag("itemshow-footer.png", class: "footer-img", alt: "フリマアプリ無料ダウンロード") %>
+
+</footer>
+<%= render partial: "footer" %>
+<%= render partial: "footer-sell-btn" %>
