@@ -3,15 +3,29 @@ Rails.application.routes.draw do
 
   # item関連
   root "items#index"
+
+  get 'items/:id/confirm_buy', to: 'items#confirm_buy'
+  get 'items/:id/complete_buy', to: 'items#complete_buy'
+  get 'items/detail', to: 'items#detail'
+
   resources :items do
+    collection do
+      post 'pay'
+    end
+    
     member do
       get :check
     end
+    
   end
+
+  post 'items/pay',to: 'items#pay'
+
+
   resources :signup, only: [:index]
 
-  get 'items/confirm_buy', to: 'items#confirm_buy'
-  get 'items/detail', to: 'items#detail'
+
+
   get 'creditcards/new', to: 'creditcards#new'
 
   # user関連

@@ -10,4 +10,5 @@
   %body
     = render 'items/header'
     = breadcrumbs separator: " #{content_tag(:i, '', :class=>'fa fa-caret-right')} ", style: :ul
+    = render 'shared/flash'
     = yield
